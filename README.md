@@ -50,15 +50,20 @@ Les dossiers CSV (`train.csv`, `test.csv`, `submission.csv`, `HomeCredit_columns
 - **Normaliser les chemins** en utilisant `Pathlib` et des variables `DATA_DIR` pour exécuter indifféremment en local ou sur Colab.
 - **Ajouter des sorties clés** (tableaux de bord, métriques) en fin de notebook pour faciliter les revues.
 
-## 🔜 Pistes d'amélioration
+## 📘 Modules de cours – Casse-têtes & maths appliquées
 
-- Générer automatiquement une table des matières des notebooks.
-- Fournir des scripts d'orchestration (`make`, `tox`, `nox`) pour rejouer les expériences critiques.
-- Mettre en place des tests rapides (lint, unitaires) sur les fonctions utilitaires présentes dans certains notebooks.
+Ces notes de cours proposent un déroulé pédagogique avec exercices et renvoient au notebook comme corrigé.
 
----
+| Module | Notebook corrigé |
+| --- | --- |
+| [Croissance exponentielle – Chestnut buns](lessons/casse-tetes/chestnut_buns.md) | [Notebook](./%20%5BProblem%5D%20The%20day%20when%20chestnut%20buns%20cover%20the%20solar%20system.ipynb) |
+| [Probabilités discrètes – Darts throwing problem](lessons/casse-tetes/darts_throwing.md) | [Notebook](./Darts%20throwing%20problem.ipynb) |
+| [Descente de montagne – Fuji Shimoyama](lessons/casse-tetes/fuji_shimoyama.md) | [Notebook](./Fuji%20Shimoyama%20problem.ipynb) |
+| [Logarithmes appliqués – Mt. Fuji paper folding](lessons/casse-tetes/mt_fuji_paper.md) | [Notebook](./Mt.%20Fuji%20paper%20folding%20probem.ipynb) |
+| [Suite géométrique – Problème de blé et d'échiquier](lessons/casse-tetes/chess_wheat.md) | [Notebook](./Probl%C3%A8me%20de%20bl%C3%A9%20et%20d%27%C3%A9chiquier.ipynb) |
+| [Puissances & visualisation – Problème de pliage du papier](lessons/casse-tetes/paper_folding.md) | [Notebook](./Probl%C3%A8me%20de%20pliage%20du%20papier.ipynb) |
+| [Progression géométrique & besoins humains – Sorori Shinzaemon](lessons/casse-tetes/sorori_shinzaemon.md) | [Notebook](./Sorori%20Shinzaemon%20problem.ipynb) |
 
-Ce README est volontairement synthétique : il sert de porte d'entrée. Libre à toi de détailler chaque sprint, décrire les datasets ou ajouter des captures d'écran selon les besoins de la formation.
 
 <!-- BEGIN NOTEBOOK TOC -->
 ### 📑 Table des notebooks (navigation thématique)
