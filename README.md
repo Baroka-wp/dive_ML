@@ -35,6 +35,7 @@ Les dossiers CSV (`train.csv`, `test.csv`, `submission.csv`, `HomeCredit_columns
 
 ## 🧭 Chemin d'apprentissage suggéré
 
+0. **Préambule – Python / NumPy / pandas / Matplotlib** : `first_notebook.ipynb`, `NumPy_serie.ipynb`, `Training_data_manipulation.ipynb`, `Data cleaning with python pandas.ipynb`.
 1. **Sprints 1 → 6** : pipeline ML, régression, classification, SVM/KNN, validation croisée.
 2. **Sprints 7 → 10** : réseaux neuronaux, optimisation et bonnes pratiques.
 3. **Cas pratiques** : `Home Price Forecast`, `Credit information analysis`, `house-prices/`.
@@ -60,39 +61,34 @@ Les dossiers CSV (`train.csv`, `test.csv`, `submission.csv`, `HomeCredit_columns
 Ce README est volontairement synthétique : il sert de porte d'entrée. Libre à toi de détailler chaque sprint, décrire les datasets ou ajouter des captures d'écran selon les besoins de la formation.
 
 <!-- BEGIN NOTEBOOK TOC -->
-### 📑 Table des notebooks
+### 📑 Table des notebooks (navigation thématique)
 
-- [ [Problem] The day when chestnut buns cover the solar system](./%20%5BProblem%5D%20The%20day%20when%20chestnut%20buns%20cover%20the%20solar%20system.ipynb)
-- [Analysis of housing information](./Analysis%20of%20housing%20information.ipynb)
-- [anchored box02](./anchored_box02.ipynb)
-- [Binary classification of iris](./Binary%20classification%20of%20iris.ipynb)
+#### Fondamentaux Python / NumPy / Pandas
+
 - [Creating dummy data](./Creating%20dummy%20data.ipynb)
 - [creation de donnees](./creation_de_donnees.ipynb)
-- [Credit information analysis](./Credit%20information%20analysis.ipynb)
-- [Credit information learning](./Credit%20information%20learning.ipynb)
-- [Darts throwing problem](./Darts%20throwing%20problem.ipynb)
-- [Data analysis of iris](./Data%20analysis%20of%20iris.ipynb)
-- [Data cleaning with python pandas](./Data%20cleaning%20with%20python%20pandas.ipynb)
-- [Ecriture et Comprehension](./Ecriture_et_Comprehension.ipynb)
-- [Faster R CNN and YOLO v3](./Faster_R_CNN_and_YOLO_v3.ipynb)
 - [first colab](./first_colab.ipynb)
 - [first notebook](./first_notebook.ipynb)
-- [Fuji Shimoyama problem](./Fuji%20Shimoyama%20problem.ipynb)
-- [Home Price Forecast](./Home%20Price%20Forecast.ipynb)
 - [Implementation of matrix product](./Implementation%20of%20matrix%20product.ipynb)
-- [keras](./keras.ipynb)
-- [LSTM](./LSTM.ipynb)
-- [Mt. Fuji paper folding probem](./Mt.%20Fuji%20paper%20folding%20probem.ipynb)
 - [NumPy serie](./NumPy_serie.ipynb)
-- [Problème de blé et d'échiquier](./Probl%C3%A8me%20de%20bl%C3%A9%20et%20d%27%C3%A9chiquier.ipynb)
-- [Problème de pliage du papier](./Probl%C3%A8me%20de%20pliage%20du%20papier.ipynb)
-- [ResNetVGG](./ResNetVGG.ipynb)
-- [Réseau de neurones récurrent (RNN) ](./R%C3%A9seau_de_neurones_r%C3%A9current_%28RNN%29_.ipynb)
-- [Seq2Seq](./Seq2Seq.ipynb)
 - [seq2seq waama](./seq2seq_waama.ipynb)
-- [SimpleConv1d](./SimpleConv1d.ipynb)
-- [SimpleConv2d](./SimpleConv2d.ipynb)
-- [Sorori Shinzaemon problem](./Sorori%20Shinzaemon%20problem.ipynb)
+- [Training data manipulation](./Training_data_manipulation.ipynb)
+- [Two-dimensional array and gradient problem](./Two-dimensional%20array%20and%20gradient%20problem.ipynb)
+- [Utilization of object orientation](./Utilization%20of%20object%20orientation.ipynb)
+- [waama to french](./waama_to_french.ipynb)
+
+#### Préparation de données & exploration tabulaire
+
+- [Analysis of housing information](./Analysis%20of%20housing%20information.ipynb)
+- [Credit information analysis](./Credit%20information%20analysis.ipynb)
+- [Credit information learning](./Credit%20information%20learning.ipynb)
+- [Data analysis of iris](./Data%20analysis%20of%20iris.ipynb)
+- [Data cleaning with python pandas](./Data%20cleaning%20with%20python%20pandas.ipynb)
+- [Home Price Forecast](./Home%20Price%20Forecast.ipynb)
+
+#### Parcours Sprints & algorithmes classiques
+
+- [Binary classification of iris](./Binary%20classification%20of%20iris.ipynb)
 - [Sprint1-Flux d'apprentissage automatique](./Sprint1-Flux%20d%27apprentissage%20automatique.ipynb)
 - [Sprint10 Deep neuronal network](./Sprint10_Deep_neuronal_network.ipynb)
 - [Sprint2 Introduction à l'apprentissage automatique scratch](./Sprint2%20Introduction%20%C3%A0%20l%27apprentissage%20automatique%20scratch.ipynb)
@@ -103,14 +99,39 @@ Ce README est volontairement synthétique : il sert de porte d'entrée. Libre 
 - [Sprint7](./Sprint7.ipynb)
 - [Sprint8 apprentissage d'ensemble](./Sprint8_apprentissage_d%27ensemble.ipynb)
 - [Sprint9 Neural network](./Sprint9_Neural_network.ipynb)
+
+#### Deep learning & vision
+
+- [anchored box02](./anchored_box02.ipynb)
+- [Faster R CNN and YOLO v3](./Faster_R_CNN_and_YOLO_v3.ipynb)
+- [keras](./keras.ipynb)
+- [ResNetVGG](./ResNetVGG.ipynb)
+- [SimpleConv1d](./SimpleConv1d.ipynb)
+- [SimpleConv2d](./SimpleConv2d.ipynb)
 - [TensorFlow](./TensorFlow.ipynb)
-- [Training data manipulation](./Training_data_manipulation.ipynb)
-- [Traitement du langage naturel](./Traitement_du_langage_naturel.ipynb)
 - [TURING CHALLENG](./TURING%20CHALLENG.ipynb)
-- [Two-dimensional array and gradient problem](./Two-dimensional%20array%20and%20gradient%20problem.ipynb)
 - [U net](./U_net.ipynb)
-- [Utilization of object orientation](./Utilization%20of%20object%20orientation.ipynb)
-- [waama to french](./waama_to_french.ipynb)
+
+#### Modèles séquentiels & séries temporelles
+
+- [LSTM](./LSTM.ipynb)
+- [Réseau de neurones récurrent (RNN) ](./R%C3%A9seau_de_neurones_r%C3%A9current_%28RNN%29_.ipynb)
+- [Seq2Seq](./Seq2Seq.ipynb)
+
+#### NLP & compréhension
+
+- [Ecriture et Comprehension](./Ecriture_et_Comprehension.ipynb)
+- [Traitement du langage naturel](./Traitement_du_langage_naturel.ipynb)
+
+#### Casse-têtes & mathématiques appliquées
+
+- [ [Problem] The day when chestnut buns cover the solar system](./%20%5BProblem%5D%20The%20day%20when%20chestnut%20buns%20cover%20the%20solar%20system.ipynb)
+- [Darts throwing problem](./Darts%20throwing%20problem.ipynb)
+- [Fuji Shimoyama problem](./Fuji%20Shimoyama%20problem.ipynb)
+- [Mt. Fuji paper folding probem](./Mt.%20Fuji%20paper%20folding%20probem.ipynb)
+- [Problème de blé et d'échiquier](./Probl%C3%A8me%20de%20bl%C3%A9%20et%20d%27%C3%A9chiquier.ipynb)
+- [Problème de pliage du papier](./Probl%C3%A8me%20de%20pliage%20du%20papier.ipynb)
+- [Sorori Shinzaemon problem](./Sorori%20Shinzaemon%20problem.ipynb)
 
 *Généré via `python scripts/generate_notebook_toc.py`.*
 <!-- END NOTEBOOK TOC -->
