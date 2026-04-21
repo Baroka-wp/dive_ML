@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 from pathlib import Path
+from urllib.parse import quote
 
 def list_notebooks(root: Path):
     notebooks = []
@@ -17,7 +18,7 @@ def make_markdown(notebooks):
     for nb in notebooks:
         folder = nb.parent
         display = nb.name.replace('.ipynb', '').replace('_', ' ')
-        link = nb.as_posix()
+        link = quote(nb.as_posix())
         if folder == Path('.'):
             lines.append(f"- [{display}](./{link})")
         else:
