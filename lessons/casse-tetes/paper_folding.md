@@ -20,6 +20,25 @@ _Plusieurs méthodes pour calculer l'épaisseur après N pliages : opérateur de
 - Ajouter un paramètre d'unité (mm/cm/m) et automatiser la conversion.
 - Sauvegarder les résultats dans un CSV pour pouvoir les importer dans un tableur.
 
+## 🔁 Séquence d'apprentissage progressive
+
+1. Comparer l'utilisation de `**` et d'une boucle pour générer la même série d'épaisseurs.
+2. Mesurer les temps d'exécution (`%timeit`) et discuter des compromis lisibilité/performance.
+3. Transformer les résultats en visualisation (line plot) et sauvegarder les valeurs dans une liste.
+## 🧩 Snippets à compléter
+
+```python
+def fold_series(n_folds, thickness_mm=0.1):
+    values = []
+    current = thickness_mm
+    for _ in range(n_folds + 1):
+        values.append(current)
+        # TODO: mettre à jour current pour représenter le pliage suivant
+    return values
+
+series = fold_series(10)
+print(series)
+```
 ## ✅ Corrigé / Notebook
 
 - [Notebook local](../../Probl%C3%A8me%20de%20pliage%20du%20papier.ipynb)

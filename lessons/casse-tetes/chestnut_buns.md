@@ -20,6 +20,27 @@ _Modélisation d'un volume qui double toutes les cinq minutes jusqu'à couvrir u
 - Tracer simultanément plusieurs scénarios (maison, ville, planète) pour comparer les délais.
 - Résoudre le problème inverse : combien de doublements restants pour atteindre un objectif donné ?
 
+## 🔁 Séquence d'apprentissage progressive
+
+1. Explorez la signification physique d'un doublement toutes les Δ minutes et comparez-la à d'autres croissances (linéaire, quadratique).
+2. Paramétrez la fonction de simulation avec des volumes cibles variés (pièce, immeuble, planète) pour sentir les ordres de grandeur.
+3. Interprétez la courbe volume vs. temps : discutez pourquoi la phase initiale paraît plate sur une échelle linéaire.
+## 🧩 Snippets à compléter
+
+```python
+def simulate_growth(initial_volume, target_volume, factor=2, dt_minutes=5):
+    volume = initial_volume
+    timeline = [volume]
+    minutes = 0
+    while volume < target_volume:
+        # TODO: incrémenter le temps de dt_minutes
+        # TODO: multiplier le volume par le facteur de croissance
+        # TODO: mémoriser le nouveau volume dans timeline
+    return minutes, timeline
+
+minutes_needed, history = simulate_growth(20, 1e9, factor=2, dt_minutes=5)
+print(f"Objectif atteint en {minutes_needed} minutes")
+```
 ## ✅ Corrigé / Notebook
 
 - [Notebook local](../../%20%5BProblem%5D%20The%20day%20when%20chestnut%20buns%20cover%20the%20solar%20system.ipynb)

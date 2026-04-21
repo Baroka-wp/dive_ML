@@ -20,6 +20,28 @@ _Reconstitution de la légende du blé doublé sur chaque case : calcul pour 2×
 - Ajouter une fonction qui renvoie la case où un seuil de grains est franchi.
 - Exporter les résultats sous forme de CSV/tableau pour insertion dans un support de cours.
 
+## 🔁 Séquence d'apprentissage progressive
+
+1. Illustrer la règle du doublement sur un mini échiquier pour ancrer l'intuition.
+2. Porter la logique sur une matrice NumPy et calculer le total avec `np.sum`.
+3. Comparer les performances des approches (boucle pure vs. vectorisation) et tracer une heatmap log.
+## 🧩 Snippets à compléter
+
+```python
+import numpy as np
+
+def wheat_board(rows=8, cols=8):
+    board = np.zeros((rows, cols), dtype=np.uint64)
+    grains = 1
+    for i in range(rows):
+        for j in range(cols):
+            board[i, j] = grains
+            # TODO: doubler la quantité pour la case suivante
+    return board
+
+board = wheat_board()
+print(board.sum())
+```
 ## ✅ Corrigé / Notebook
 
 - [Notebook local](../../Probl%C3%A8me%20de%20bl%C3%A9%20et%20d%27%C3%A9chiquier.ipynb)

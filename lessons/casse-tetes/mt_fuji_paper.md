@@ -20,6 +20,28 @@ _Calcul du nombre de pliages nécessaires pour dépasser la hauteur du Mont Fuji
 - Afficher un graphique semi-log de l'épaisseur en fonction du nombre de pliages.
 - Créer un petit CLI qui prend la hauteur cible en entrée utilisateur.
 
+## 🔁 Séquence d'apprentissage progressive
+
+1. Calculer à la main quelques pliages pour relier les chiffres au phénomène physique.
+2. Coder la version itérative puis valider en la comparant à la formule logarithmique.
+3. Discuter la longueur de papier requise et expérimenter d'autres sommets/épaisseurs.
+## 🧩 Snippets à compléter
+
+```python
+import math
+
+def folds_to_reach(height_m, thickness_mm=0.1):
+    thickness_m = thickness_mm / 1000
+    folds = 0
+    current = thickness_m
+    while current < height_m:
+        # TODO: incrémenter folds
+        # TODO: doubler l'épaisseur actuelle
+    analytical = math.ceil(math.log2(height_m / thickness_m))
+    return folds, analytical
+
+print(folds_to_reach(3776)[0])
+```
 ## ✅ Corrigé / Notebook
 
 - [Notebook local](../../Mt.%20Fuji%20paper%20folding%20probem.ipynb)

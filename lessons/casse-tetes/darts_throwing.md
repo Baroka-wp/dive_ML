@@ -20,6 +20,29 @@ _Simulation de lancers de fléchettes guidés par un lancer de dé, stockage des
 - Compter combien de tirs tombent dans chaque anneau de la cible et afficher un histogramme.
 - Exporter les tirs dans un DataFrame pandas pour analyses ultérieures.
 
+## 🔁 Séquence d'apprentissage progressive
+
+1. Revoir les types de distribution (discrète/continue) et créer un dictionnaire vide pour capturer les tirs par valeur de dé.
+2. Programmer la boucle de simulation (n lancers) et remplir progressivement la structure `dart_log`.
+3. Visualiser la cible en ajoutant cercles / quadrants puis commenter la densité observée.
+## 🧩 Snippets à compléter
+
+```python
+import random
+
+def simulate_darts(n_throws=50):
+    dart_log = {face: [] for face in range(1, 7)}
+    for _ in range(n_throws):
+        die = random.randint(1, 6)
+        x = random.uniform(-1, 1)
+        y = random.uniform(-1, 1)
+        # TODO: vérifier si (x, y) est dans le cercle unité
+        # TODO: si oui, ajouter les coordonnées à dart_log[die]
+    return dart_log
+
+results = simulate_darts(200)
+print({face: len(hits) for face, hits in results.items()})
+```
 ## ✅ Corrigé / Notebook
 
 - [Notebook local](../../Darts%20throwing%20problem.ipynb)
