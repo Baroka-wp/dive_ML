@@ -1,30 +1,31 @@
 # Puissances & visualisation – Problème de pliage du papier
 
-_Plusieurs méthodes pour calculer l'épaisseur après N pliages : opérateur de puissance, boucle, comparaison de temps, sauvegarde en liste et graphiques personnalisés._
+_Générer des épaisseurs après N pliages avec des boucles Python pures, puis préparer les données pour une éventuelle visualisation._
 
 ## 🎯 Objectifs pédagogiques
 
-- Réviser l'opérateur puissance, les conversions d'unités et le timing de code.
-- Comparer approche itérative vs. exponentielle et mesurer leurs performances.
-- Mettre en forme les données (listes, graphiques, personnalisation Matplotlib).
+- Comparer approche `**` vs. boucle pour générer la même série d'épaisseurs.
+- Mesurer les différences conceptuelles (lisibilité, performance) sans dépendre d'outils externes.
+- Stocker les résultats dans une liste afin de pouvoir les exploiter (affichage console, sauvegarde).
 
 ## 🧱 Déroulé suggéré
 
-1. Implémenter les calculs avec `**` puis avec une boucle `for` pour ressentir la différence.
-2. Utiliser `%timeit` pour comparer les temps et stocker les résultats dans une liste.
-3. Tracer la progression (line plot) et proposer des options de personnalisation (titre, couleur).
+1. Écrire `fold_series` avec une boucle et vérifier la sortie pour quelques pliages.
+2. Ajouter une version utilisant `pow`/`**` et comparer les résultats.
+3. Former un tableau texte (index, épaisseur) pour discussion ou copie dans un tableur.
 
 ## 🧪 Variantes / exercices
 
-- Vectoriser avec NumPy pour générer l'épaisseur de 0 à N pliages en un appel.
-- Ajouter un paramètre d'unité (mm/cm/m) et automatiser la conversion.
-- Sauvegarder les résultats dans un CSV pour pouvoir les importer dans un tableur.
+- Ajouter un paramètre `unit` pour afficher l'épaisseur en mm/cm/m.
+- Générer automatiquement un fichier texte listant les valeurs.
+- Créer une version inverse : déterminer le nombre de pliages pour atteindre une épaisseur cible.
 
 ## 🔁 Séquence d'apprentissage progressive
 
-1. Comparer l'utilisation de `**` et d'une boucle pour générer la même série d'épaisseurs.
-2. Mesurer les temps d'exécution (`%timeit`) et discuter des compromis lisibilité/performance.
-3. Transformer les résultats en visualisation (line plot) et sauvegarder les valeurs dans une liste.
+1. Implémentez la boucle de base et affichez la liste.
+2. Ajoutez une vérification avec `pow` pour confirmer la cohérence.
+3. Transformez la liste en texte formaté (tableau) ou fichier.
+
 ## 🧩 Snippets à compléter
 
 ```python
@@ -33,12 +34,14 @@ def fold_series(n_folds, thickness_mm=0.1):
     current = thickness_mm
     for _ in range(n_folds + 1):
         values.append(current)
-        # TODO: mettre à jour current pour représenter le pliage suivant
+        # TODO: mettre à jour current pour le pliage suivant
     return values
 
 series = fold_series(10)
-print(series)
+for index, value in enumerate(series):
+    print(index, value)
 ```
+
 ## ✅ Corrigé / Notebook
 
 - [Notebook local](../../Probl%C3%A8me%20de%20pliage%20du%20papier.ipynb)

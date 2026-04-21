@@ -1,30 +1,31 @@
 # Probabilités discrètes – Darts throwing problem
 
-_Simulation de lancers de fléchettes guidés par un lancer de dé, stockage des impacts dans un dictionnaire puis visualisation de la cible._
+_Simulation de lancers de fléchettes entièrement en Python standard (`random`, listes, dictionnaires) pour explorer les distributions discrètes._
 
 ## 🎯 Objectifs pédagogiques
 
-- Rappeler la différence entre distributions discrètes et continues et utiliser un dictionnaire de listes.
-- Simuler des tirages aléatoires avec `random`/`numpy` et relier chaque numéro de dé à plusieurs tirs (x, y).
-- Tracer les impacts et styliser une cible (limites, cercles) sous Matplotlib.
+- Manipuler dictionnaires/listes pour enregistrer des évènements catégoriels sans bibliothèques externes.
+- Utiliser le module `random` pour simuler des lancers et alimenter une structure de données.
+- Interpréter les résultats sous forme de comptages (affichages console) avant de penser visualisation.
 
 ## 🧱 Déroulé suggéré
 
-1. Introduire les dictionnaires Python (clés/valeurs) puis construire `dart_loc_dic`.
-2. Simuler de nombreux lancers (boucle) et peupler le dictionnaire avec les coordonnées tirées.
-3. Visualiser les tirs, ajouter un cercle unité et commenter la répartition obtenue.
+1. Revoir distributions discrètes vs continues et initialiser `dart_log = {face: [] ...}`.
+2. Boucler sur `n` lancers, tirer un dé (`randint`) et des coordonnées (`uniform`), stocker celles qui tombent dans le cercle unité.
+3. Compter les occurrences par face et commenter la répartition.
 
 ## 🧪 Variantes / exercices
 
-- Remplacer le dé par deux dés (somme) et observer la nouvelle distribution.
-- Compter combien de tirs tombent dans chaque anneau de la cible et afficher un histogramme.
-- Exporter les tirs dans un DataFrame pandas pour analyses ultérieures.
+- Remplacer le dé par deux dés (somme) et comparer la distribution finale.
+- Compter combien de tirs tombent dans chaque anneau (rayon < 0.5, 0.5-1, etc.).
+- Exporter les tirs sous forme de texte (`csv.writer`) pour exploitation ultérieure.
 
 ## 🔁 Séquence d'apprentissage progressive
 
-1. Revoir les types de distribution (discrète/continue) et créer un dictionnaire vide pour capturer les tirs par valeur de dé.
-2. Programmer la boucle de simulation (n lancers) et remplir progressivement la structure `dart_log`.
-3. Visualiser la cible en ajoutant cercles / quadrants puis commenter la densité observée.
+1. Construisez un dictionnaire vide pour capturer les tirs par valeur de dé.
+2. Programmez la boucle de simulation et affichez les premières entrées pour valider la structure.
+3. Ajoutez un calcul de fréquences (pourcentage) et discutez de la convergence vers l'uniforme.
+
 ## 🧩 Snippets à compléter
 
 ```python
@@ -36,13 +37,14 @@ def simulate_darts(n_throws=50):
         die = random.randint(1, 6)
         x = random.uniform(-1, 1)
         y = random.uniform(-1, 1)
-        # TODO: vérifier si (x, y) est dans le cercle unité
-        # TODO: si oui, ajouter les coordonnées à dart_log[die]
+        # TODO: vérifier si x**2 + y**2 <= 1
+        # TODO: si oui, ajouter (x, y) dans dart_log[die]
     return dart_log
 
 results = simulate_darts(200)
 print({face: len(hits) for face, hits in results.items()})
 ```
+
 ## ✅ Corrigé / Notebook
 
 - [Notebook local](../../Darts%20throwing%20problem.ipynb)

@@ -52,7 +52,7 @@ Les dossiers CSV (`train.csv`, `test.csv`, `submission.csv`, `HomeCredit_columns
 
 ## 📘 Modules de cours – Casse-têtes & maths appliquées
 
-Ces notes de cours proposent un déroulé pédagogique avec exercices et renvoient au notebook comme corrigé.
+Ces notes de cours proposent un déroulé pédagogique avec exercices et renvoient au notebook comme corrigé. Elles sont conçues pour apprendre **exclusivement avec le Python standard** (aucun NumPy/pandas requis).
 
 | Module | Notebook corrigé |
 | --- | --- |

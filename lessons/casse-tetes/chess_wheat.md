@@ -1,47 +1,49 @@
 # Suite géométrique – Problème de blé et d'échiquier
 
-_Reconstitution de la légende du blé doublé sur chaque case : calcul pour 2×2 puis n×m, totalisation, heatmap et comparaison de méthodes (boucle, `np.append`, broadcast)._
+_Reconstitution de la légende du blé doublé sur chaque case en Python pur (listes imbriquées, aucune dépendance scientifique)._ 
 
 ## 🎯 Objectifs pédagogiques
 
-- Programmer la progression 1, 2, 4… sur une grille et calculer le total de grains.
-- Mettre en avant les gains de performance en vectorisant avec NumPy.
-- Visualiser la distribution (heatmap log) et interpréter les régions dominantes.
+- Programmer la progression 1, 2, 4… sur une grille en manipulant uniquement des entiers et boucles `for`.
+- Calculer le total de grains et analyser la distribution sans NumPy.
+- Préparer une heatmap ou un export ultérieur à partir de données natives (`list` de `list`).
 
 ## 🧱 Déroulé suggéré
 
-1. Commencer par un échiquier 2×2 pour expliquer la règle, puis généraliser à n×m.
-2. Comparer trois méthodes de génération et mesurer les temps CPU.
-3. Tracer une heatmap et répondre aux questions 'combien de grains sur la seconde moitié ?'.
+1. Illustrer la règle sur un mini échiquier (2×2) pour ancrer l'intuition.
+2. Étendre la logique à un échiquier n×m via deux boucles imbriquées.
+3. Calculer la somme totale et explorer différentes questions (deuxième moitié, case seuil, etc.).
 
 ## 🧪 Variantes / exercices
 
-- Introduire une règle alternative (triple sur les colonnes impaires) et comparer.
-- Ajouter une fonction qui renvoie la case où un seuil de grains est franchi.
-- Exporter les résultats sous forme de CSV/tableau pour insertion dans un support de cours.
+- Modifier la règle (triple sur les colonnes impaires) et comparer les résultats.
+- Ajouter une fonction qui renvoie la case où un seuil est franchi.
+- Exporter la matrice dans un fichier texte/CSV pour visualisation externe.
 
 ## 🔁 Séquence d'apprentissage progressive
 
-1. Illustrer la règle du doublement sur un mini échiquier pour ancrer l'intuition.
-2. Porter la logique sur une matrice NumPy et calculer le total avec `np.sum`.
-3. Comparer les performances des approches (boucle pure vs. vectorisation) et tracer une heatmap log.
+1. Construisez la liste de listes pour un 2×2 et affichez-la.
+2. Généralisez à n×m et vérifiez la quantité sur quelques cases clés.
+3. Ajoutez des fonctions utilitaires : somme totale, somme de la seconde moitié, recherche de seuil.
+
 ## 🧩 Snippets à compléter
 
 ```python
-import numpy as np
-
 def wheat_board(rows=8, cols=8):
-    board = np.zeros((rows, cols), dtype=np.uint64)
+    board = []
     grains = 1
     for i in range(rows):
+        row = []
         for j in range(cols):
-            board[i, j] = grains
-            # TODO: doubler la quantité pour la case suivante
+            row.append(grains)
+            # TODO: doubler grains pour la prochaine case
+        board.append(row)
     return board
 
 board = wheat_board()
-print(board.sum())
+print(sum(sum(row) for row in board))
 ```
+
 ## ✅ Corrigé / Notebook
 
 - [Notebook local](../../Probl%C3%A8me%20de%20bl%C3%A9%20et%20d%27%C3%A9chiquier.ipynb)

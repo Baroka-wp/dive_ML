@@ -1,36 +1,40 @@
 # Descente de montagne – Fuji Shimoyama
 
-_À partir d'une grille d'altitudes, on calcule la pente locale, choisit la prochaine case à descendre et trace les trajectoires selon différents départs/hyperparamètres._
+_reproduction d'une descente gloutonne en Python pur : matrices représentées par des listes imbriquées, aucun NumPy requis._
 
 ## 🎯 Objectifs pédagogiques
 
-- Charger et afficher la topographie (heatmap ou contour plot).
-- Programmer les fonctions `calculate_slope`, `decide_next_point` et la boucle de descente.
-- Comparer plusieurs points de départ et visualiser les chemins/temps de descente.
+- Charger une grille d'altitudes via le module `csv` et la représenter comme liste de listes.
+- Programmer des fonctions `local_slope` et `next_step` avec uniquement des boucles/conditions Python.
+- Comparer les trajectoires obtenues en modifiant point de départ et règles d'arrêt.
 
 ## 🧱 Déroulé suggéré
 
-1. Importer les données d'altitude et les visualiser pour repérer les zones raides.
-2. Écrire les fonctions de pente et de décision, puis une routine de descente complète.
-3. Expérimenter différents départs, pas max et hyperparamètres et superposer les trajectoires.
+1. Charger `mtfuji_data.csv` avec `csv.reader` et afficher quelques lignes pour vérifier la structure.
+2. Implémenter `local_slope(grid, pos, move)` puis `greedy_descent(grid, start)`.
+3. Tester plusieurs départs (bord, sommet) et commenter les chemins obtenus.
 
 ## 🧪 Variantes / exercices
 
-- Tester une stratégie multi-pas (regarder deux coups en avance).
-- Ajouter une contrainte de pas maximum en mètres et observer l'impact.
-- Exporter chaque trajet en GeoJSON ou CSV pour exploitation externe.
+- Empêcher les sorties de grille en bornant les indices (min/max).
+- Limiter le nombre de pas pour simuler la fatigue d'un randonneur.
+- Exporter la trajectoire finale dans un simple fichier texte (liste de coordonnées).
 
 ## 🔁 Séquence d'apprentissage progressive
 
-1. Charger la matrice d'altitudes et visualiser la topographie avant tout calcul.
-2. Implémenter les fonctions `local_slope` et `next_step` puis tester la descente depuis un point unique.
-3. Boucler sur plusieurs points de départ et comparer graphiquement les trajectoires obtenues.
+1. Chargez la grille dans une liste de listes et inspectez les altitudes extrêmes.
+2. Testez `local_slope` manuellement sur deux positions voisines pour valider les signes.
+3. Appliquez `greedy_descent` sur plusieurs départs et notez les différences de trajectoire.
+
 ## 🧩 Snippets à compléter
 
 ```python
-import numpy as np
+import csv
 
-ELEVATION = np.loadtxt('mtfuji_data.csv', delimiter=',')
+def load_grid(path):
+    with open(path, newline='') as f:
+        reader = csv.reader(f)
+        return [[float(cell) for cell in row] for row in reader]
 
 MOVES = [(-1, 0), (1, 0), (0, -1), (0, 1),
          (-1, -1), (-1, 1), (1, -1), (1, 1)]
@@ -39,20 +43,28 @@ def local_slope(grid, pos, move):
     i, j = pos
     di, dj = move
     ni, nj = i + di, j + dj
-    # TODO: vérifier que (ni, nj) reste dans la grille
-    # TODO: retourner la différence d'altitude grid[i, j] - grid[ni, nj]
+    # TODO: vérifier que ni/nj restent dans la grille
+    # TODO: retourner grid[i][j] - grid[ni][nj]
 
 
 def greedy_descent(grid, start):
     path = [start]
     current = start
     while True:
-        # TODO: calculer la pente pour chaque mouvement
-        # TODO: choisir le move avec la plus forte pente descendante
-        # TODO: arrêter si aucune pente négative n'est disponible
+        best_move = None
+        best_drop = 0
+        for move in MOVES:
+            drop = local_slope(grid, current, move)
+            # TODO: garder le move avec la plus grande chute positive
+        if best_move is None:
+            break
+        i, j = current
+        di, dj = best_move
+        current = (i + di, j + dj)
         path.append(current)
     return path
 ```
+
 ## ✅ Corrigé / Notebook
 
 - [Notebook local](../../Fuji%20Shimoyama%20problem.ipynb)
