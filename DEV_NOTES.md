@@ -1,0 +1,6 @@
+# DEV_NOTES
+
+- **Structuration des leçons** : les notebooks ont été regroupés par affinité thématique. Lorsque deux carnets traitaient exactement du même geste pédagogique (ex. `first_notebook` + `first_colab`, ou la paire `Creating dummy data` / `creation_de_donnees`), un seul module couvre les deux pour éviter la redite tout en conservant les liens individuels.
+- **Prérequis logiciels** : chaque leçon précise si l'activité se fait en Python pur, avec NumPy/pandas ou avec un framework deep learning. Ces mêmes indications sont synthétisées dans le README afin de rappeler rapidement quelles installations sont nécessaires par cluster.
+- **Chemins Colab** : tous les liens vers les notebooks utilisent maintenant des chemins URL-encodés. Si un nouveau carnet est ajouté, garder ce format pour assurer l'ouverture correcte dans Colab.
+- **Tables README** : la section "Modules de cours" est générée automatiquement via le bloc `<!-- BEGIN EXTENDED LESSON TABLES --> ... <!-- END EXTENDED LESSON TABLES -->`. Relancer `python3 scripts/generate_notebook_toc.py` puis le petit script d'insertion (voir `scripts/` ou réutiliser la commande présente dans l'historique) si de nouveaux modules sont créés.
